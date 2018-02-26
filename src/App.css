@@ -1,0 +1,103 @@
+.input-container {
+    text-align: center;
+    border: 2px solid black;
+    width: 35%;
+    margin: 0 4% 0 10%;
+    float: left;
+    height: 400px;
+}
+
+.input-container .page-title {
+  font-family: Open Sans;
+  font-size: 24px;
+}
+
+.input-container .input-help {
+  font-family: Open Sans light
+}
+
+.input-container .location-input,
+.input-container .country-input,
+.input-container .pincode-input {
+  display: block;
+  margin: 5px auto;
+  width: 250px;
+  height: 40px;
+  box-sizing: border-box;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid black;
+  outline: none;
+}
+.input-container .btn-primary {
+  margin: 10px auto;
+  width: 250px;
+  height: 40px;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+  font-size: 16px;
+  font-family: open sans light;
+}
+
+.suggestions-container {
+  float: left;
+  width: 35%;
+  margin: 0 10% 0 4%;
+  text-align: center;
+  border: 2px solid black;
+  height: 400px;
+}
+
+.suggestion-box {
+  background-color: dimgrey;
+  font-family: open sans light;
+  width: 350px;
+  border-radius: 5px;
+  margin: 5px auto;
+}
+
+.suggestion-id, .suggestion-name ,.suggestion-country {
+  display: inline-block;
+  padding: 0;
+  margin: 5px;
+}
+
+.result-container {
+  clear: both;
+  margin-top: 20px;
+  overflow: auto;
+}
+
+.result-title {
+    text-align: center;
+    font-family: open sans;
+    font-size: 24px;
+}
+
+.weather-details {
+  text-align: center;
+}
+
+.tile-box {
+  display: inline-block;
+  border: 2px solid black;
+  margin: 5px;
+  min-width: 275px;
+  font-family: open sans light;
+  padding: 10px;
+  text-align: left;
+}
+
+.city-details {
+  text-align: center;
+}
+
+.city-details p {
+  display: inline-block;
+  font-family: Open Sans;
+  margin: 0 25px;
+}
+
