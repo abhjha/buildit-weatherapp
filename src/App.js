@@ -52,7 +52,7 @@ class App extends Component {
     } else {
       url = endpoint + '?q='+ locationName +',' + locationCountry + appKey;
     }
-    fetch(url)
+    fetch(url,{'mode':' no-cors'})
       .then((response) => response.json())
       .then((data) => {
         this.setState({cityDetails: data})
