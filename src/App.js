@@ -129,9 +129,9 @@ class App extends Component {
             {this.state.cityDetails.list && this.state.cityDetails.list.length>0 && this.state.cityDetails.list.map( (item, index) => (
                 <div key={index} className="tile-box">
                   <p className="date"><strong>Date and Time: </strong> {item.dt_txt}</p>
-                  <p className="temp"><strong>Temp: </strong>{item.main.temp}</p>
-                  <p className="min-temp"><strong>Min Temp: </strong>{item.main.temp_min}</p>
-                  <p className="max-temp"><strong>Max Temp: </strong>{item.main.temp_max}</p>
+                  <p className="temp"><strong>Temp: </strong>{item.main.temp}<strong>K</strong></p>
+                  <p className="min-temp"><strong>Min Temp: </strong>{item.main.temp_min}<strong>K</strong></p>
+                  <p className="max-temp"><strong>Max Temp: </strong>{item.main.temp_max}<strong>K</strong></p>
                   <p className="pressure"><strong>Pressure: </strong>{item.main.pressure}</p>
                   <p className="sea-level"><strong>Sea Level: </strong>{item.main.sea_level}</p>
                   <p className="description"><strong>Weather description: </strong>{item.weather[0].description}</p>

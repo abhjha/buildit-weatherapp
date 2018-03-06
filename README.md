@@ -24,3 +24,4 @@ Live demo of this repo is already hosted on Heroku server.
 1. All input boxes can be autosuggest that can populate suggestion in real time(server integration).
 2. UI that can catch attention.
 3. Code coverage is not 100% as of now. Make it 100%.
+4. Allowing the user to change the units of value shown(Kelvin,Celsius,Fahrenheit for temperature/ mph,kmph for windspeed).
