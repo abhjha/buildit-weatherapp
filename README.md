@@ -17,3 +17,10 @@ Steps to build the app.
 
 Live demo of this repo is already hosted on Heroku server.
 "https://build-weather-app.herokuapp.com/"
+
+
+
+***Future enhancements***
+1. All input boxes can be autosuggest that can populate suggestion in real time(server integration).
+2. UI that can catch attention.
+3. Code coverage is not 100% as of now. Make it 100%.
