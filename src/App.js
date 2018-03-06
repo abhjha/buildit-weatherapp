@@ -22,22 +22,19 @@ class App extends Component {
         () => this.populateSuggestions()
       )
     } else if(e.target.className ==="country-input") {
-      this.setState(
-        {locationCountry: e.target.value},
-        () => this.populateSuggestions()
-      )
+      this.setState({locationCountry: e.target.value})
     } else {
-      this.setState(
-        {locationId: e.target.value},
-        () => this.populateSuggestions()
-      )
+      this.setState({locationId: e.target.value})
     }
   }
 
   populateSuggestions = () => {
-    const suggestions = cityList.filter(city => 
-      city.name.includes(this.state.locationName)
-    );
+    let suggestions =[];
+    if(this.state.locationName !== ''){
+      suggestions = cityList.filter(city => 
+        city.name.includes(this.state.locationName)
+      );
+    }
     this.setState({suggestions});
   }
 
@@ -119,26 +116,26 @@ class App extends Component {
           <p className="result-title">Weather Report</p>
           {this.state.cityDetails.city && this.state.cityDetails.city.name && (            
             <div className="city-details">
-              <p>City name: {this.state.cityDetails.city.name}</p>
-              <p>Country name: {this.state.cityDetails.city.country}</p>
-              <p>City ID: {this.state.cityDetails.city.id}</p>
-              <p>City coordinates:
-                <span>Lat:{this.state.cityDetails.city.coord.lat} </span>
-                <span>Lon:{this.state.cityDetails.city.coord.lon} </span>
+              <p><strong>City name: </strong> {this.state.cityDetails.city.name}</p>
+              <p><strong>Country name: </strong> {this.state.cityDetails.city.country}</p>
+              <p><strong>City ID: </strong> {this.state.cityDetails.city.id}</p>
+              <p><strong>City coordinates: </strong>
+                <span><strong>Lat: </strong>{this.state.cityDetails.city.coord.lat} </span>
+                <span><strong>Lon: </strong>{this.state.cityDetails.city.coord.lon} </span>
               </p>
             </div>
           )}
           <div className="weather-details">
             {this.state.cityDetails.list && this.state.cityDetails.list.length>0 && this.state.cityDetails.list.map( (item, index) => (
                 <div key={index} className="tile-box">
-                  <p className="date">Date and Time: {item.dt_txt}</p>
-                  <p className="temp">Temp: {item.main.temp}</p>
-                  <p className="min-temp">Min Temp:{item.main.temp_min}</p>
-                  <p className="max-temp">Max Temp:{item.main.temp_max}</p>
-                  <p className="pressure">Pressure:{item.main.pressure}</p>
-                  <p className="sea-level">Sea Level:{item.main.sea_level}</p>
-                  <p className="description">Weather description:{item.weather[0].description}</p>
-                  <p className="wind-speed">Wind speed: {item.wind.speed}</p>
+                  <p className="date"><strong>Date and Time: </strong> {item.dt_txt}</p>
+                  <p className="temp"><strong>Temp: </strong>{item.main.temp}</p>
+                  <p className="min-temp"><strong>Min Temp: </strong>{item.main.temp_min}</p>
+                  <p className="max-temp"><strong>Max Temp: </strong>{item.main.temp_max}</p>
+                  <p className="pressure"><strong>Pressure: </strong>{item.main.pressure}</p>
+                  <p className="sea-level"><strong>Sea Level: </strong>{item.main.sea_level}</p>
+                  <p className="description"><strong>Weather description: </strong>{item.weather[0].description}</p>
+                  <p className="wind-speed"><strong>Wind speed: </strong> {item.wind.speed}</p>
                 </div>
               )
             )}
