@@ -43,7 +43,7 @@ class App extends Component {
 
   getResult = () => {
     const {locationName, locationId, locationCountry} = this.state;
-    const endpoint = 'http://api.openweathermap.org/data/2.5/forecast';
+    const endpoint = 'https://api.openweathermap.org/data/2.5/forecast';
     const appKey = '&appid=4451b2e7335cdc7f3916567b60ca09e9';
     let url;
 
@@ -52,7 +52,7 @@ class App extends Component {
     } else {
       url = endpoint + '?q='+ locationName +',' + locationCountry + appKey;
     }
-    fetch(url,{'mode':' no-cors'})
+    fetch(url)
       .then((response) => response.json())
       .then((data) => {
         this.setState({cityDetails: data})
@@ -108,9 +108,12 @@ class App extends Component {
               return null
             })
           }
-          {this.state.suggestions.length===0 && (
-            <p> No results found.. Try manual search</p>
+          {this.state.locationName ==='' && (
+            <p>Please fill in city name to get some suggestions</p>
           )}
+          {this.state.locationName !=='' &&  this.state.suggestions.length===0 &&(
+            <p>No suggestions found. Try manual search</p>
+          )}        
         </div>
         <div className="result-container" >
           <p className="result-title">Weather Report</p>
